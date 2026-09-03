@@ -1,23 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elly Haber | Marketing Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elly Haber | Marketing Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff8fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d85c91;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d85c91;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #d85c91;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: #555;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background-color: #d85c91;
+            color: white;
+        }
+
+        .primary:hover {
+            background-color: #bd4779;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 2px solid #d85c91;
+            color: #d85c91;
+            background-color: white;
+        }
+
+        .secondary:hover {
+            background-color: #fff0f6;
+            transform: translateY(-2px);
+        }
+
+        /* About Preview */
+        .about {
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 14px 25px;
+            border-radius: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #f29abb;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Hi, I'm Elly!</h1>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Elly Haber</div>
 
-    <p>
-      I'm a marketing student at Iowa State University passionate about 
-      creativity, social media, sports, and creating content that connects 
-      with people. I love bringing ideas to life and am always looking for 
-      new ways to learn, grow, and make an impact through marketing.
-    </p>
-  </header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience & Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Home / Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm Elly!</h1>
+
+            <h2>Marketing • Creativity • Social Media • Sports</h2>
+
+            <p>
+                I'm a marketing student at Iowa State University passionate
+                about creativity, social media, sports, and creating content
+                that connects with people. I love bringing ideas to life and
+                am always looking for new ways to learn, grow, and make an
+                impact through marketing.
+            </p>
+
+            <div class="buttons">
+                <a href="experience.html" class="button primary">
+                    View My Work
+                </a>
+
+                <a href="about.html" class="button secondary">
+                    About Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Preview -->
+    <section class="about">
+
+        <h2>A Little About Me</h2>
+
+        <p>
+            I enjoy combining creativity and strategy to create meaningful
+            marketing experiences. From social media and content creation
+            to sports and event marketing, I'm always looking for new ways
+            to connect brands with their audiences.
+        </p>
+
+    </section>
+
+
+    <!-- Skills Preview -->
+    <section class="skills">
+
+        <h2>What I Do</h2>
+
+        <div class="skill-container">
+
+            <div class="skill">Social Media Marketing</div>
+
+            <div class="skill">Content Creation</div>
+
+            <div class="skill">Digital Marketing</div>
+
+            <div class="skill">Event Marketing</div>
+
+            <div class="skill">Canva & Graphic Design</div>
+
+            <div class="skill">Sports Marketing</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>Let's connect!</p>
+
+        <p>
+            <a href="mailto:your-email@example.com">
+                Email Me
+            </a>
+        </p>
+
+        <br>
+
+        <p>© 2026 Elly Haber</p>
+
+    </footer>
 
 </body>
 </html>
