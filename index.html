@@ -15,15 +15,55 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff8fb;
+            background-color: #fff5f8;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Top Decorative Accent Bar */
+        .top-accent-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #d85c91, #f29abb, #ffd1dc);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1003;
+        }
+
+        /* Background Soft Blurs for Fun Visual Depth */
+        .bg-blob-1 {
+            position: absolute;
+            top: 50px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            background: rgba(216, 92, 145, 0.12);
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-blob-2 {
+            position: absolute;
+            top: 400px;
+            left: -120px;
+            width: 400px;
+            height: 400px;
+            background: rgba(242, 154, 187, 0.15);
+            filter: blur(90px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Top-Left Navigation Button & Container */
         .nav-container {
             position: fixed;
-            top: 20px;
+            top: 24px;
             left: 20px;
             z-index: 1001;
         }
@@ -32,17 +72,19 @@
             background-color: #ffffff;
             color: #d85c91;
             border: 2px solid #d85c91;
-            font-size: 24px;
+            font-size: 22px;
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(216, 92, 145, 0.15);
             transition: all 0.3s ease;
         }
 
         #menu-toggle:hover {
             background-color: #d85c91;
             color: #ffffff;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(216, 92, 145, 0.25);
         }
 
         /* Slide-out Menu */
@@ -53,8 +95,8 @@
             width: 280px;
             height: 100%;
             background-color: #ffffff;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
-            transition: left 0.3s ease-in-out;
+            box-shadow: 6px 0 25px rgba(0,0,0,0.08);
+            transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 60px 30px;
             box-sizing: border-box;
             z-index: 1002;
@@ -73,6 +115,7 @@
             font-size: 32px;
             color: #888;
             cursor: pointer;
+            transition: color 0.2s;
         }
 
         #menu-close:hover {
@@ -84,6 +127,7 @@
             font-weight: bold;
             color: #d85c91;
             margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
 
         .side-menu ul {
@@ -98,16 +142,17 @@
 
         .side-menu ul li a {
             text-decoration: none;
-            color: #333;
+            color: #444;
             font-size: 18px;
-            font-weight: 500;
+            font-weight: 600;
             display: block;
-            transition: color 0.3s;
+            transition: all 0.2s ease;
         }
 
         .side-menu ul li a:hover,
         .side-menu ul li a.active-page {
             color: #d85c91;
+            transform: translateX(5px);
         }
 
         /* Dimmed Overlay */
@@ -117,7 +162,8 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(40, 20, 30, 0.3);
+            backdrop-filter: blur(2px);
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -131,83 +177,166 @@
 
         /* Hero Section */
         .hero {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content {
             max-width: 850px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(216, 92, 145, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-content:hover {
+            transform: translateY(-4px);
+        }
+
+        .welcome-badge {
+            display: inline-block;
+            background-color: #ffe6f0;
+            color: #d85c91;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
             font-size: 64px;
             margin-bottom: 10px;
             color: #222;
+            letter-spacing: -1px;
         }
 
         .hero h2 {
-            font-size: 25px;
-            font-weight: normal;
+            font-size: 22px;
+            font-weight: 600;
             color: #d85c91;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
         }
 
         .hero p {
             font-size: 19px;
-            max-width: 750px;
+            max-width: 720px;
             margin: 0 auto;
             color: #555;
+            line-height: 1.7;
         }
 
-        /* About Preview */
+        /* About Preview Section */
+        .about-wrapper {
+            padding: 20px 20px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
         .about {
-            background-color: white;
-            padding: 80px 20px;
+            background-color: #ffffff;
+            padding: 60px 40px;
             text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ffedf4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(216, 92, 145, 0.12);
         }
 
         .about h2 {
-            font-size: 36px;
+            font-size: 34px;
             margin-bottom: 20px;
             color: #222;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 4px;
+            background: #f29abb;
+            border-radius: 2px;
+            margin: 8px auto 0;
         }
 
         .about p {
-            max-width: 750px;
+            max-width: 720px;
             margin: auto;
             font-size: 18px;
             color: #555;
+            line-height: 1.7;
         }
 
         /* Footer */
         footer {
-            background-color: #222;
+            background-color: #1e1b1c;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            font-size: 16px;
         }
 
         footer a {
             color: #f29abb;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 700px) {
+            .hero-content {
+                padding: 35px 20px;
+            }
+
             .hero h1 {
-                font-size: 45px;
+                font-size: 42px;
             }
 
             .hero h2 {
-                font-size: 21px;
+                font-size: 19px;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
+            }
+
+            .about {
+                padding: 40px 20px;
+            }
+
+            .about h2 {
+                font-size: 28px;
             }
         }
     </style>
@@ -215,9 +344,16 @@
 
 <body>
 
+    <!-- Top Accent Bar -->
+    <div class="top-accent-bar"></div>
+
+    <!-- Soft Background Blobs for Visual Interest -->
+    <div class="bg-blob-1"></div>
+    <div class="bg-blob-2"></div>
+
     <!-- Top-Left Navigation -->
     <div class="nav-container">
-        <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+        <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776; Menu</button>
         <nav id="side-menu" class="side-menu">
             <button id="menu-close" aria-label="Close Navigation Menu">&times;</button>
             <div class="menu-brand">Elly Haber</div>
@@ -236,6 +372,7 @@
     <!-- Home / Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <span class="welcome-badge">Welcome</span>
             <h1>Hi, I'm Elly!</h1>
             <h2>Marketing • Creativity • Social Media • Sports</h2>
             <p>
@@ -249,16 +386,18 @@
     </section>
 
 
-    <!-- About Preview -->
-    <section class="about">
-        <h2>A Little About Me</h2>
-        <p>
-            I enjoy combining creativity and strategy to create meaningful
-            marketing experiences. From social media and content creation
-            to sports and event marketing, I'm always looking for new ways
-            to connect brands with their audiences.
-        </p>
-    </section>
+    <!-- About Preview Section -->
+    <div class="about-wrapper">
+        <section class="about">
+            <h2>A Little About Me</h2>
+            <p>
+                I enjoy combining creativity and strategy to create meaningful
+                marketing experiences. From social media and content creation
+                to sports and event marketing, I'm always looking for new ways
+                to connect brands with their audiences.
+            </p>
+        </section>
+    </div>
 
 
     <!-- Footer -->
