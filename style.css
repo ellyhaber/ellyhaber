@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFC0CB; /* Pink outer margin area */
+    background-color: #FADADD; /* Soft Baby Pink side margins */
     color: #4A3E3D;
     line-height: 1.6;
 }
@@ -16,10 +16,10 @@ body {
 .site-container {
     width: 80%;
     margin: 20px auto;
-    background-color: #FFF9F0; /* Cream background */
-    border: 3px solid #FFB6C1;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: #FCFBF7; /* Soft Cream/White main background */
+    border: 2px solid #F4C2C2;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
     overflow: hidden;
     display: grid;
     grid-template-columns: 200px 1fr 220px;
@@ -35,117 +35,117 @@ body {
 /* Header & Logo */
 .logo-area {
     grid-area: logo;
-    border-right: 2px dashed #FFD1DC;
-    border-bottom: 2px dashed #FFD1DC;
+    border-right: 1.5px solid #FADADD;
+    border-bottom: 1.5px solid #FADADD;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #FFF0F5;
+    background-color: #FFF8F9;
 }
 
 .logo-area h1 {
-    color: #D87093;
+    color: #E899A5;
     font-size: 1.8rem;
     font-weight: 700;
 }
 
 .info-graphics-area {
     grid-area: info;
-    border-bottom: 2px dashed #FFD1DC;
+    border-bottom: 1.5px solid #FADADD;
     padding: 15px;
     text-align: center;
-    background-color: #FFF0F5;
-    color: #8B5A2B;
+    background-color: #FFF8F9;
+    color: #7A6063;
     font-size: 0.95rem;
 }
 
 /* Top Navigation Bar */
 .primary-nav-area {
     grid-area: primary-nav;
-    border-bottom: 2px solid #FFD1DC;
-    background-color: #FFE4E1;
-    padding: 5px 0;
+    border-bottom: 1.5px solid #FADADD;
+    background-color: #FFF0F2;
+    padding: 6px 0;
 }
 
 .nav-list {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 30px;
-    padding: 10px;
+    gap: 25px;
+    padding: 8px;
 }
 
 .nav-list a {
     text-decoration: none;
-    color: #6B4226;
+    color: #6E5256;
     font-weight: 600;
     padding: 8px 18px;
-    border-radius: 15px;
-    transition: all 0.25s ease;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-list a:hover {
-    background-color: #FFB6C1;
+    background-color: #FADADD;
     color: #ffffff;
 }
 
 .nav-list a.active-page {
-    background-color: #DB7093;
+    background-color: #E899A5;
     color: #ffffff;
-    box-shadow: 0 3px 8px rgba(219, 112, 147, 0.3);
+    box-shadow: 0 3px 6px rgba(232, 153, 165, 0.25);
 }
 
 /* Main Layout Grid Areas */
 .left-sidebar {
     grid-area: sidebar;
-    border-right: 2px dashed #FFD1DC;
+    border-right: 1.5px solid #FADADD;
     padding: 20px;
-    background-color: #FFF5EE;
+    background-color: #FFFDFB;
 }
 
 .main-content {
     grid-area: main;
     padding: 25px;
-    background-color: #FFF9F0;
+    background-color: #FCFBF7;
 }
 
 .hero-image {
     width: 100%;
     height: 180px;
-    border: 2px dashed #FFB6C1;
-    border-radius: 15px;
+    border: 1.5px dashed #F4C2C2;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    background-color: #FFF0F5;
-    color: #DB7093;
+    background-color: #FFF8F9;
+    color: #E899A5;
     font-weight: 600;
 }
 
 .sticky-sidebar {
     grid-area: sticky;
-    border-left: 2px dashed #FFD1DC;
+    border-left: 1.5px solid #FADADD;
     padding: 20px;
     position: sticky;
     top: 0;
     height: fit-content;
-    background-color: #FFF5EE;
+    background-color: #FFFDFB;
 }
 
 .sticky-sidebar h3, .left-sidebar h3 {
-    color: #C71585;
+    color: #D87A88;
     margin-bottom: 10px;
 }
 
 /* Footer */
 .footer-area {
     grid-area: footer;
-    border-top: 2px solid #FFD1DC;
+    border-top: 1.5px solid #FADADD;
     padding: 15px 20px;
     text-align: center;
     font-size: 0.85rem;
-    background-color: #FFE4E1;
-    color: #704214;
+    background-color: #FFF0F2;
+    color: #7A6063;
 }
