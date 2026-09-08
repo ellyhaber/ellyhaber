@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Navigation Links Data
-    const links = [
+    // Navigation items
+    const navItems = [
         { name: "About Me", url: "index.html" },
         { name: "Education", url: "education.html" },
         { name: "Experience", url: "experience.html" },
         { name: "Contact", url: "contact.html" }
     ];
 
-    // Select or create primary navigation container
-    const navContainer = document.getElementById("primary-nav");
+    const navContainer = document.getElementById("top-nav");
 
     if (navContainer) {
         const ul = document.createElement("ul");
@@ -16,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const currentPath = window.location.pathname.split("/").pop();
 
-        links.forEach(link => {
+        navItems.forEach(item => {
             const li = document.createElement("li");
             const a = document.createElement("a");
-            a.href = link.url;
-            a.textContent = link.name;
+            a.href = item.url;
+            a.textContent = item.name;
 
             // Highlight current page
-            if (currentPath === link.url || (currentPath === "" && link.url === "index.html")) {
+            if (currentPath === item.url || (currentPath === "" && item.url === "index.html")) {
                 a.classList.add("active-page");
             }
 
