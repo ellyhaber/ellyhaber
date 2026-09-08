@@ -3,455 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Elly Haber | Marketing Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff5f8;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Top Decorative Accent Bar */
-        .top-accent-bar {
-            height: 6px;
-            background: linear-gradient(90deg, #d85c91, #f29abb, #ffd1dc);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1003;
-        }
-
-        /* Background Soft Blurs for Fun Visual Depth */
-        .bg-blob-1 {
-            position: absolute;
-            top: 50px;
-            right: -100px;
-            width: 350px;
-            height: 350px;
-            background: rgba(216, 92, 145, 0.12);
-            filter: blur(80px);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .bg-blob-2 {
-            position: absolute;
-            top: 400px;
-            left: -120px;
-            width: 400px;
-            height: 400px;
-            background: rgba(242, 154, 187, 0.15);
-            filter: blur(90px);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Top-Left Navigation Button & Container */
-        .nav-container {
-            position: fixed;
-            top: 24px;
-            left: 20px;
-            z-index: 1001;
-        }
-
-        #menu-toggle {
-            background-color: #ffffff;
-            color: #d85c91;
-            border: 2px solid #d85c91;
-            font-size: 22px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(216, 92, 145, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        #menu-toggle:hover {
-            background-color: #d85c91;
-            color: #ffffff;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(216, 92, 145, 0.25);
-        }
-
-        /* Slide-out Menu */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background-color: #ffffff;
-            box-shadow: 6px 0 25px rgba(0,0,0,0.08);
-            transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 60px 30px;
-            box-sizing: border-box;
-            z-index: 1002;
-        }
-
-        .side-menu.active {
-            left: 0;
-        }
-
-        #menu-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 32px;
-            color: #888;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        #menu-close:hover {
-            color: #d85c91;
-        }
-
-        .menu-brand {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d85c91;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
-        }
-
-        .side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .side-menu ul li {
-            margin-bottom: 20px;
-        }
-
-        .side-menu ul li a {
-            text-decoration: none;
-            color: #444;
-            font-size: 18px;
-            font-weight: 600;
-            display: block;
-            transition: all 0.2s ease;
-        }
-
-        .side-menu ul li a:hover,
-        .side-menu ul li a.active-page {
-            color: #d85c91;
-            transform: translateX(5px);
-        }
-
-        /* Dimmed Overlay */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(40, 20, 30, 0.3);
-            backdrop-filter: blur(2px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 1000;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 850px;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 50px 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 30px rgba(216, 92, 145, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .hero-content:hover {
-            transform: translateY(-4px);
-        }
-
-        .welcome-badge {
-            display: inline-block;
-            background-color: #ffe6f0;
-            color: #d85c91;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            margin-bottom: 10px;
-            color: #222;
-            letter-spacing: -1px;
-        }
-
-        .hero h2 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #d85c91;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
-        }
-
-        .hero p {
-            font-size: 19px;
-            max-width: 720px;
-            margin: 0 auto;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* About Preview Section */
-        .about-wrapper {
-            padding: 20px 20px 80px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .about {
-            background-color: #ffffff;
-            padding: 60px 40px;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            border: 1px solid #ffedf4;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .about:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(216, 92, 145, 0.12);
-        }
-
-        .about h2 {
-            font-size: 34px;
-            margin-bottom: 20px;
-            color: #222;
-            position: relative;
-            display: inline-block;
-        }
-
-        .about h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background: #f29abb;
-            border-radius: 2px;
-            margin: 8px auto 0;
-        }
-
-        .about p {
-            max-width: 720px;
-            margin: auto;
-            font-size: 18px;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1e1b1c;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        footer p {
-            font-size: 16px;
-        }
-
-        footer a {
-            color: #f29abb;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: #ffffff;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 700px) {
-            .hero-content {
-                padding: 35px 20px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 19px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .about {
-                padding: 40px 20px;
-            }
-
-            .about h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Top Accent Bar -->
-    <div class="top-accent-bar"></div>
+    <div class="site-container">
+        <!-- Logo Area -->
+        <header class="logo-area">
+            <h1>Logo</h1>
+        </header>
 
-    <!-- Soft Background Blobs for Visual Interest -->
-    <div class="bg-blob-1"></div>
-    <div class="bg-blob-2"></div>
-
-    <!-- Top-Left Navigation -->
-    <div class="nav-container">
-        <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776; Menu</button>
-        <nav id="side-menu" class="side-menu">
-            <button id="menu-close" aria-label="Close Navigation Menu">&times;</button>
-            <div class="menu-brand">Elly Haber</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience & Portfolio</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div id="menu-overlay" class="menu-overlay"></div>
-
-
-    <!-- Home / Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="welcome-badge">Welcome</span>
-            <h1>Hi, I'm Elly!</h1>
-            <h2>Marketing • Creativity • Social Media • Sports</h2>
-            <p>
-                I'm a marketing student at Iowa State University passionate
-                about creativity, social media, sports, and creating content
-                that connects with people. I love bringing ideas to life and
-                am always looking for new ways to learn, grow, and make an
-                impact through marketing.
-            </p>
+        <!-- Top Informational Graphics Banner -->
+        <div class="info-graphics-area">
+            <p>This area is for informational graphics which describe in images what your site is about.</p>
         </div>
-    </section>
 
+        <!-- Primary Navigation (Populated by nav.js) -->
+        <nav id="primary-nav" class="primary-nav-area"></nav>
 
-    <!-- About Preview Section -->
-    <div class="about-wrapper">
-        <section class="about">
-            <h2>A Little About Me</h2>
-            <p>
-                I enjoy combining creativity and strategy to create meaningful
-                marketing experiences. From social media and content creation
-                to sports and event marketing, I'm always looking for new ways
-                to connect brands with their audiences.
-            </p>
-        </section>
+        <!-- Secondary Navigation -->
+        <div class="secondary-nav-area">
+            <ul class="nav-list">
+                <li><a href="#sub1">Sub-link 1</a></li>
+                <li><a href="#sub2">Sub-link 2</a></li>
+            </ul>
+        </div>
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="left-sidebar">
+            <h3>Navigation</h3>
+            <p>Primary Navigation / Secondary navigation links</p>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="hero-image">
+                Hero image at top
+            </div>
+            <h2>Main Content Area</h2>
+            <p>This area contains HTML text and images...</p>
+        </main>
+
+        <!-- Sticky Content Area -->
+        <aside class="sticky-sidebar">
+            <h3>Sticky Content</h3>
+            <ul>
+                <li>News items</li>
+                <li>Offers</li>
+                <li>General site info</li>
+                <li>Social Networking icons</li>
+            </ul>
+        </aside>
+
+        <!-- Footer Area -->
+        <footer class="footer-area">
+            <p>Footer: Contains copyright info &copy; 2026, primary links, contact, privacy statement, webmaster email address.</p>
+        </footer>
     </div>
 
-
-    <!-- Footer -->
-    <footer>
-        <p>Let's connect!</p>
-        <p>
-            <a href="mailto:your-email@example.com">
-                Email Me
-            </a>
-        </p>
-        <br>
-        <p>© 2026 Elly Haber</p>
-    </footer>
-
-
-    <!-- Menu Toggle Script -->
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.getElementById("menu-toggle");
-        const menuClose = document.getElementById("menu-close");
-        const sideMenu = document.getElementById("side-menu");
-        const menuOverlay = document.getElementById("menu-overlay");
-
-        const openMenu = () => {
-            sideMenu.classList.add("active");
-            menuOverlay.classList.add("active");
-        };
-
-        const closeMenu = () => {
-            sideMenu.classList.remove("active");
-            menuOverlay.classList.remove("active");
-        };
-
-        menuToggle.addEventListener("click", openMenu);
-        menuClose.addEventListener("click", closeMenu);
-        menuOverlay.addEventListener("click", closeMenu);
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && sideMenu.classList.contains("active")) {
-                closeMenu();
-            }
-        });
-
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = sideMenu.querySelectorAll("ul li a");
-
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute("href");
-            if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
-                link.classList.add("active-page");
-            }
-        });
-    });
-    </script>
-
+    <!-- Include Reusable Nav Script -->
+    <script src="nav.js"></script>
 </body>
 </html>
