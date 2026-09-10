@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = [
     { title: "Home", url: "index.html" },
     { title: "About", url: "about.html" },
-    { title: "Projects", url: "projects.html" },
+    { title: "Education", url: "education.html" },
     { title: "Contact", url: "contact.html" }
   ];
 
