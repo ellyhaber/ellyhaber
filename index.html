@@ -1,130 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elly Haber | Portfolio</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+  <!-- Container wrapping the classic layout -->
+  <div class="layout-container">
+    
     <!-- Header -->
-    <header>
-        <!-- Header intentionally left blank -->
+    <header class="header-box">
+      <h1>Header</h1>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Navigation Menu (Populated dynamically via navbar.js or manually) -->
+    <nav class="nav-box" id="main-nav"></nav>
 
-            <div class="nav-logo">
-                EH
-            </div>
+    <!-- Content Area (3 Columns) -->
+    <aside class="content-box side-content">
+      <h2>Content</h2>
+      <p>Left sidebar content...</p>
+    </aside>
 
-            <ul class="nav-menu">
-                <li><a href="education.html">Education</a></li>
-                <li><a href="index.html">About Me</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-
-        <section class="hero">
-
-            <!-- Left Side -->
-            <div class="side-panel left-panel">
-                <div class="decorative-circle"></div>
-                <p>Marketing</p>
-                <p>Events</p>
-                <p>Communication</p>
-            </div>
-
-            <!-- Center Content -->
-            <div class="main-content">
-
-                <p class="hello">HELLO, I'M</p>
-
-                <h1>Elly Haber</h1>
-
-                <h2>Marketing • Events • Communication</h2>
-
-                <p class="intro">
-                    I’m a marketing student at Iowa State University passionate
-                    about creativity, social media, sports, and creating content
-                    that connects with people.
-                </p>
-
-                <p class="intro">
-                    I enjoy bringing ideas to life through marketing, event
-                    planning, communication, and memorable experiences.
-                </p>
-
-                <a href="experience.html" class="button">
-                    Explore My Work
-                </a>
-
-            </div>
-
-            <!-- Right Side -->
-            <div class="side-panel right-panel">
-                <div class="small-card">
-                    <span>01</span>
-                    <p>Creative<br>Ideas</p>
-                </div>
-
-                <div class="small-card">
-                    <span>02</span>
-                    <p>Event<br>Experiences</p>
-                </div>
-
-                <div class="small-card">
-                    <span>03</span>
-                    <p>Digital<br>Content</p>
-                </div>
-            </div>
-
-        </section>
-
+    <main class="content-box main-content">
+      <h2>Main Content</h2>
+      <p>Primary page content goes here...</p>
     </main>
 
+    <aside class="content-box side-content">
+      <h2>Content</h2>
+      <p>Right sidebar content...</p>
+    </aside>
+
     <!-- Footer -->
-    <footer>
-
-        <div class="footer-content">
-
-            <div>
-                <p class="footer-name">Elly Haber</p>
-                <p>Marketing • Events • Communication</p>
-            </div>
-
-            <div class="footer-contact">
-                <a href="mailto:your-email@example.com">
-                    your-email@example.com
-                </a>
-
-                <a href="https://www.linkedin.com/in/elly-haber2325/" target="_blank">
-                    LinkedIn
-                </a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 Elly Haber</p>
-        </div>
-
+    <footer class="footer-box">
+      <p>Footer</p>
     </footer>
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+  </div>
 
+  <script src="navbar.js"></script>
 </body>
 </html>
