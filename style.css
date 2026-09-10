@@ -1,4 +1,16 @@
-/* Reset and Base Styles */
+/* --- Global Styles & Cute Theme --- */
+:root {
+    --bg-color: #fcf8f6;
+    --card-bg: #ffffff;
+    --accent-pink: #f7d6e0;
+    --accent-soft-blue: #d6e2e9;
+    --text-color: #5a5353;
+    --text-muted: #8c8282;
+    --shadow-soft: 0 10px 25px rgba(220, 200, 200, 0.25);
+    --radius-lg: 24px;
+    --radius-sm: 14px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,146 +18,181 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FADADD; /* Soft Baby Pink side margins */
-    color: #4A3E3D;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Nunito', sans-serif;
     line-height: 1.6;
+    padding: 20px 10px;
 }
 
-/* Page Container (Central 80% width with 10% pink margins on each side) */
+/* --- Container --- */
 .site-container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #FCFBF7; /* Soft Cream/White main background */
-    border: 2px solid #F4C2C2;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 200px 1fr 220px;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-        "logo info info"
-        "primary-nav primary-nav primary-nav"
-        "sidebar main sticky"
-        "footer footer footer";
-    min-height: 95vh;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Header & Logo */
-.logo-area {
-    grid-area: logo;
-    border-right: 1.5px solid #FADADD;
-    border-bottom: 1.5px solid #FADADD;
+/* --- Top Banner --- */
+.top-banner {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-soft-blue));
+    color: var(--text-color);
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* --- Primary Navigation --- */
+.primary-nav-area {
+    text-align: center;
+}
+
+/* --- Soft Cards (No Harsh Lines) --- */
+.card, .hero-card {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    border: none;
+}
+
+/* --- Hero Section --- */
+.hero-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: #ffffff;
+}
+
+.avatar-placeholder {
+    width: 85px;
+    height: 85px;
+    background: var(--accent-pink);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: #FFF8F9;
+    font-size: 2.2rem;
+    flex-shrink: 0;
 }
 
-.logo-area h1 {
-    color: #E899A5;
-    font-size: 1.8rem;
+.hero-text h1 {
+    font-family: 'Fredoka', cursive;
+    color: #4a4242;
+    font-size: 2rem;
+    margin-top: 4px;
+}
+
+.badge {
+    background: #fbf0f3;
+    color: #cb7891;
+    font-size: 0.82rem;
     font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
-.info-graphics-area {
-    grid-area: info;
-    border-bottom: 1.5px solid #FADADD;
-    padding: 15px;
-    text-align: center;
-    background-color: #FFF8F9;
-    color: #7A6063;
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+/* --- Main Content Cards --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-card h2 {
+    font-family: 'Fredoka', cursive;
+    color: #4a4242;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+
+/* Cute Tags */
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.tag {
+    background: var(--bg-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+/* Grid Layout for Links & Updates */
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card h3 {
+    font-family: 'Fredoka', cursive;
+    color: #4a4242;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+}
+
+.link-list, .updates-list {
+    list-style: none;
+}
+
+.link-list li, .updates-list li {
+    margin-bottom: 10px;
     font-size: 0.95rem;
 }
 
-/* Top Navigation Bar */
-.primary-nav-area {
-    grid-area: primary-nav;
-    border-bottom: 1.5px solid #FADADD;
-    background-color: #FFF0F2;
-    padding: 6px 0;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 25px;
-    padding: 8px;
-}
-
-.nav-list a {
+.link-list a {
+    color: #728fae;
     text-decoration: none;
-    color: #6E5256;
     font-weight: 600;
-    padding: 8px 18px;
-    border-radius: 12px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
-.nav-list a:hover {
-    background-color: #FADADD;
-    color: #ffffff;
+.link-list a:hover {
+    color: #d17b96;
+    padding-left: 4px;
 }
 
-.nav-list a.active-page {
-    background-color: #E899A5;
-    color: #ffffff;
-    box-shadow: 0 3px 6px rgba(232, 153, 165, 0.25);
-}
-
-/* Main Layout Grid Areas */
-.left-sidebar {
-    grid-area: sidebar;
-    border-right: 1.5px solid #FADADD;
-    padding: 20px;
-    background-color: #FFFDFB;
-}
-
-.main-content {
-    grid-area: main;
-    padding: 25px;
-    background-color: #FCFBF7;
-}
-
-.hero-image {
-    width: 100%;
-    height: 180px;
-    border: 1.5px dashed #F4C2C2;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: #FFF8F9;
-    color: #E899A5;
-    font-weight: 600;
-}
-
-.sticky-sidebar {
-    grid-area: sticky;
-    border-left: 1.5px solid #FADADD;
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    height: fit-content;
-    background-color: #FFFDFB;
-}
-
-.sticky-sidebar h3, .left-sidebar h3 {
-    color: #D87A88;
-    margin-bottom: 10px;
-}
-
-/* Footer */
-.footer-area {
-    grid-area: footer;
-    border-top: 1.5px solid #FADADD;
-    padding: 15px 20px;
-    text-align: center;
+.updates-list span {
+    font-weight: 700;
+    color: var(--text-muted);
     font-size: 0.85rem;
-    background-color: #FFF0F2;
-    color: #7A6063;
+}
+
+/* --- Footer --- */
+.footer-area {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .hero-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid-row {
+        grid-template-columns: 1fr;
+    }
 }
