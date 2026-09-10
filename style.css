@@ -6,9 +6,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fff0f5; /* Soft lavender blush background */
+  color: #5c4b51;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -17,74 +17,117 @@ body {
 /* Main Grid Layout */
 .layout-container {
   display: grid;
-  grid-template-columns: 250px 1fr; /* Fixed width sidebar, flexible main content */
-  grid-gap: 8px;
+  grid-template-columns: 240px 1fr; /* Fixed width sidebar, flexible main section */
+  grid-gap: 12px;
   width: 100%;
   max-width: 900px;
   min-height: 90vh;
 }
 
-/* Common Box Border & Typography Styling */
+/* Common Box Style (Pink Border & Cute Corners) */
 .box {
-  border: 2px solid #111;
-  border-radius: 2px;
-  background-color: #ffffff;
+  border: 2px solid #f4c2c2; /* Soft pastel pink border */
+  border-radius: 12px;
+  background-color: #ffffff; /* Clean white card backgrounds */
+  box-shadow: 0 4px 10px rgba(244, 194, 194, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 24px;
 }
 
-/* Header & Footer (Full Width) */
-.header-box,
-.footer-box {
+/* Header (Cute Font Style) */
+.header-box {
   grid-column: 1 / -1;
-  min-height: 80px;
-  font-size: 1.4rem;
-  font-weight: 700;
+  min-height: 90px;
+  background-color: #ffe4e1; /* Misty Rose */
 }
 
-/* Nav Bar (Full Width) */
+.header-box h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: 3.2rem;
+  color: #d87093; /* Soft pale violet red */
+}
+
+/* Navigation Bar */
 .nav-box {
   grid-column: 1 / -1;
   min-height: 50px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  background-color: #fff0f3;
 }
 
 .nav-box ul {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   list-style: none;
 }
 
 .nav-box a {
   text-decoration: none;
-  color: #111;
-  font-weight: 600;
+  color: #c71585;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
 .nav-box a:hover {
-  text-decoration: underline;
+  color: #ff69b4;
+  border-bottom: 2px solid #ff69b4;
 }
 
-/* Aside & Section (2 Column Middle Row) */
+/* Sidebar / Aside (Blank state) */
 .aside-box {
   grid-column: 1 / 2;
   min-height: 350px;
-  font-size: 1.2rem;
+  background-color: #ffffff;
 }
 
+/* Main Content Section */
 .section-box {
   grid-column: 2 / 3;
   min-height: 350px;
-  font-size: 1.3rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-box h2 {
+  font-family: 'Fredoka', sans-serif;
+  color: #d87093;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+.section-box p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #6d595e;
+}
+
+/* Footer Styling */
+.footer-box {
+  grid-column: 1 / -1;
+  min-height: 60px;
+  background-color: #ffe4e1;
   font-weight: 600;
 }
 
-/* Responsive Layout for Mobile Screens */
+.footer-box p {
+  color: #8b5a2b;
+}
+
+.footer-box a {
+  color: #d87093;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Mobile Layout */
 @media (max-width: 650px) {
   .layout-container {
     grid-template-columns: 1fr;
