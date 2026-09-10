@@ -3,53 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio ✨</title>
+    
+    <!-- Aesthetic Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="site-container">
-        <!-- Logo Area -->
-        <header class="logo-area">
-            <h1>♡ Logo ♡</h1>
+
+        <!-- Top Banner / Greeting -->
+        <header class="top-banner">
+            <p>welcome to my cozy corner of the web ✨</p>
         </header>
 
-        <!-- Top Banner -->
-        <div class="info-graphics-area">
-            <p>Welcome to my personal website ✨</p>
-        </div>
-
-        <!-- Top Navigation Bar (Populated via nav.js) -->
+        <!-- Top Navigation Bar -->
         <nav id="top-nav" class="primary-nav-area"></nav>
 
-        <!-- Left Sidebar -->
-        <aside class="left-sidebar">
-            <h3>Quick Links</h3>
-            <p>Welcome!</p>
-        </aside>
+        <!-- Main Hero Card -->
+        <section class="hero-card">
+            <div class="profile-avatar">
+                <div class="avatar-placeholder">🌸</div>
+            </div>
+            <div class="hero-text">
+                <span class="badge">hello & welcome! ♡</span>
+                <h1>Hi, I'm [Your Name] ✨</h1>
+                <p class="subtitle">Student, creator, & visual storyteller</p>
+            </div>
+        </section>
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <div class="hero-image">
-                ✦ Hero Image Area ✦
-            </div>
-            <h2>Main Content</h2>
-            <p>Write your main body content here.</p>
-        </main>
+            
+            <!-- About Me Section -->
+            <section class="card about-card">
+                <h2>✦ About Me ✦</h2>
+                <p>
+                    Hello! Welcome to my personal site. I’m a student and creator passionate about digital media, 
+                    design, and sharing my journey. When I'm not working on new projects, you can usually find me 
+                    exploring aesthetic visual design, curated collections, or enjoying a fresh cup of tea.
+                </p>
+                <div class="tags">
+                    <span class="tag">☁️ Creator</span>
+                    <span class="tag">🎨 Design</span>
+                    <span class="tag">📚 Student</span>
+                    <span class="tag">🌿 Aesthetics</span>
+                </div>
+            </section>
 
-        <!-- Sticky Sidebar -->
-        <aside class="sticky-sidebar">
-            <h3>Updates</h3>
-            <ul>
-                <li>News & updates</li>
-                <li>Social links</li>
-            </ul>
-        </aside>
+            <!-- Quick Links & Updates Row -->
+            <div class="grid-row">
+                
+                <!-- Quick Links -->
+                <aside class="card">
+                    <h3>♡ Quick Links</h3>
+                    <ul class="link-list">
+                        <li><a href="#about">🌸 About Me</a></li>
+                        <li><a href="#projects">📁 Projects & Works</a></li>
+                        <li><a href="#contact">✉️ Get in Touch</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Updates -->
+                <aside class="card">
+                    <h3>✨ Latest Updates</h3>
+                    <ul class="updates-list">
+                        <li><span>🌱 Sept 2026:</span> Updated website design!</li>
+                        <li><span>🎀 Status:</span> Currently creating new projects</li>
+                    </ul>
+                </aside>
+
+            </div>
+
+        </main>
 
         <!-- Footer Area -->
         <footer class="footer-area">
-            <p>&copy; 2026 | Designed with ♡</p>
+            <p>&copy; 2026 [Your Name] | Made with ♡</p>
         </footer>
+
     </div>
 
     <!-- Reusable Top Nav Script -->
