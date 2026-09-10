@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Update your site links here
+  // Navigation Links: 'Projects' changed to 'Education'
   const navLinks = [
     { title: "Home", url: "index.html" },
     { title: "About", url: "about.html" },
-    { title: "Projects", url: "projects.html" },
+    { title: "Education", url: "education.html" },
     { title: "Contact", url: "contact.html" }
   ];
 
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
       a.href = link.url;
       a.textContent = link.title;
 
-      // Automatically underline active page
+      // Highlight active link
       if (window.location.pathname.endsWith(link.url)) {
-        a.style.textDecoration = "underline";
+        a.style.borderBottom = "2px solid #c71585";
       }
 
       li.appendChild(a);
