@@ -3,567 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elly Haber | Marketing Portfolio</title>
+    <title>Elly Haber | Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Trebuchet MS", Arial, sans-serif;
-            background-color: #fff8fa;
-            color: #4f3b42;
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(255, 248, 250, 0.95);
-            border-bottom: 1px solid #f3dce3;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #c97996;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #5d474e;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #c97996;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #fff8fa, #fce8ef);
-        }
-
-        /* Decorative bubbles */
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.7;
-        }
-
-        .bubble-one {
-            width: 180px;
-            height: 180px;
-            background-color: #f7cbd8;
-            top: 12%;
-            left: 8%;
-        }
-
-        .bubble-two {
-            width: 100px;
-            height: 100px;
-            background-color: #efd9df;
-            bottom: 15%;
-            right: 12%;
-        }
-
-        .bubble-three {
-            width: 60px;
-            height: 60px;
-            background-color: #f4b8c8;
-            top: 25%;
-            right: 20%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hello {
-            color: #c97996;
-            font-size: 18px;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .name-bubble {
-            display: inline-block;
-            background-color: white;
-            padding: 25px 45px;
-            border-radius: 60px;
-            box-shadow: 0 10px 30px rgba(180, 120, 140, 0.15);
-            border: 2px solid #f5dce4;
-            margin-bottom: 25px;
-        }
-
-        .name-bubble h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            color: #bd6f8c;
-            letter-spacing: -2px;
-        }
-
-        .hero h2 {
-            font-size: 24px;
-            font-weight: normal;
-            color: #6b555c;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-            color: #806b72;
-            font-size: 17px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 13px 28px;
-            background-color: #d98fa8;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background-color: #c97996;
-            transform: translateY(-2px);
-        }
-
-        /* GENERAL SECTIONS */
-        section {
-            padding: 90px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #bd6f8c;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: #8b737b;
-        }
-
-        /* ABOUT */
-        .about {
-            background-color: white;
-        }
-
-        .about-container {
-            max-width: 950px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-photo {
-            height: 330px;
-            background-color: #fce8ef;
-            border-radius: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c97996;
-            font-size: 18px;
-            border: 2px dashed #eab9c8;
-        }
-
-        .about-text h3 {
-            color: #bd6f8c;
-            font-size: 27px;
-            margin-bottom: 15px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            color: #66545a;
-        }
-
-        /* EXPERIENCE */
-        .experience {
-            background-color: #fff8fa;
-        }
-
-        .experience-container {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .experience-card {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 25px;
-            border-left: 6px solid #e4a5b8;
-            box-shadow: 0 8px 25px rgba(180, 120, 140, 0.08);
-            transition: 0.3s;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .experience-card h3 {
-            color: #bd6f8c;
-            font-size: 23px;
-        }
-
-        .experience-card h4 {
-            color: #80636c;
-            font-weight: normal;
-            margin-bottom: 10px;
-        }
-
-        .experience-card span {
-            font-size: 14px;
-            color: #b18a96;
-        }
-
-        /* EDUCATION */
-        .education {
-            background-color: white;
-        }
-
-        .education-card {
-            max-width: 800px;
-            margin: auto;
-            padding: 40px;
-            text-align: center;
-            background-color: #fff4f7;
-            border-radius: 30px;
-            border: 1px solid #f2d6df;
-        }
-
-        .education-card h3 {
-            color: #bd6f8c;
-            font-size: 27px;
-            margin-bottom: 10px;
-        }
-
-        .education-card p {
-            margin: 6px 0;
-        }
-
-        /* CONTACT */
-        .contact {
-            background-color: #fce8ef;
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 650px;
-            margin: auto;
-        }
-
-        .contact-box h2 {
-            color: #bd6f8c;
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        .contact-box p {
-            margin-bottom: 25px;
-            color: #705b63;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            text-decoration: none;
-            color: #bd6f8c;
-            background-color: white;
-            padding: 12px 22px;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
-
-        .contact-links a:hover {
-            background-color: #bd6f8c;
-            color: white;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #fff8fa;
-            color: #a48790;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 700px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-photo {
-                height: 250px;
-            }
-
-            section {
-                padding: 70px 7%;
-            }
-
-            .name-bubble {
-                padding: 20px 28px;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#home" class="logo">Elly Haber ♡</a>
+    <!-- Header -->
+    <header>
+        <!-- Header intentionally left blank -->
+    </header>
 
-        <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="nav-logo">
+                EH
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="education.html">Education</a></li>
+                <li><a href="index.html">About Me</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
     </nav>
 
+    <!-- Main Content -->
+    <main>
 
-    <!-- HOME / HERO -->
-    <section class="hero" id="home">
+        <section class="hero">
 
-        <div class="bubble bubble-one"></div>
-        <div class="bubble bubble-two"></div>
-        <div class="bubble bubble-three"></div>
+            <!-- Left Side -->
+            <div class="side-panel left-panel">
+                <div class="decorative-circle"></div>
+                <p>Marketing</p>
+                <p>Events</p>
+                <p>Communication</p>
+            </div>
 
-        <div class="hero-content">
+            <!-- Center Content -->
+            <div class="main-content">
 
-            <div class="hello">HELLO, I'M</div>
+                <p class="hello">HELLO, I'M</p>
 
-            <div class="name-bubble">
                 <h1>Elly Haber</h1>
-            </div>
 
-            <h2>Marketing • Events • Communication</h2>
+                <h2>Marketing • Events • Communication</h2>
 
-            <p>
-                I’m a senior at Iowa State University passionate about
-                creativity, marketing, events, and creating meaningful
-                connections between brands and their audiences.
-            </p>
-
-            <a href="#about" class="button">Get to Know Me ♡</a>
-
-        </div>
-    </section>
-
-
-    <!-- ABOUT ME -->
-    <section class="about" id="about">
-
-        <div class="section-title">
-            <h2>About Me ♡</h2>
-            <p>A little bit about who I am and what I love to do.</p>
-        </div>
-
-        <div class="about-container">
-
-            <div class="about-photo">
-                Add Your Photo Here ♡
-            </div>
-
-            <div class="about-text">
-
-                <h3>Hi, I'm Elly!</h3>
-
-                <p>
-                    I’m a senior at Iowa State University majoring in Marketing
-                    with a minor in Management, graduating in December 2026.
+                <p class="intro">
+                    I’m a marketing student at Iowa State University passionate
+                    about creativity, social media, sports, and creating content
+                    that connects with people.
                 </p>
 
-                <p>
-                    I’m passionate about creating meaningful experiences,
-                    connecting with people, and bringing creative ideas to life
-                    through marketing.
+                <p class="intro">
+                    I enjoy bringing ideas to life through marketing, event
+                    planning, communication, and memorable experiences.
                 </p>
 
-                <p>
-                    I especially enjoy event marketing, content creation,
-                    email outreach, and developing strategies that help brands
-                    connect with their audiences.
-                </p>
-
-                <p>
-                    I’m always looking for opportunities to learn, grow, and
-                    make an impact through marketing.
-                </p>
-
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-    <section class="experience" id="experience">
-
-        <div class="section-title">
-            <h2>Experience ✿</h2>
-            <p>A few of the experiences that have shaped my marketing journey.</p>
-        </div>
-
-        <div class="experience-container">
-
-            <div class="experience-card">
-                <h3>Sports Marketing Intern</h3>
-                <h4>University of Hawaiʻi Athletics</h4>
-                <span>2026</span>
-                <p>
-                    Worked on gameday events, fan engagement, promotions,
-                    social content, in-venue entertainment, and event execution.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Marketing Intern</h3>
-                <h4>Corridor Safety</h4>
-                <span>2025 – Present</span>
-                <p>
-                    Create marketing content, manage LinkedIn communication,
-                    conduct research, and assist with email outreach and
-                    professional communications.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Tournaments & Events Operations Intern</h3>
-                <h4>Field of Dreams Movie Site</h4>
-                <span>2025</span>
-                <p>
-                    Assisted with baseball tournaments and events while
-                    supporting event logistics, marketing, communication,
-                    and visitor experiences.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section class="education" id="education">
-
-        <div class="section-title">
-            <h2>Education ♡</h2>
-            <p>My academic journey.</p>
-        </div>
-
-        <div class="education-card">
-
-            <h3>Iowa State University</h3>
-
-            <p><strong>Marketing Major</strong></p>
-            <p><strong>Management Minor</strong></p>
-
-            <p>Expected Graduation: December 2026</p>
-
-            <p>
-                Interested in marketing strategy, event marketing,
-                sports marketing, communication, and creative content.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <div class="contact-box">
-
-            <h2>Let's Connect! ♡</h2>
-
-            <p>
-                I’d love to connect and hear about new opportunities,
-                collaborations, or ways we can work together.
-            </p>
-
-            <div class="contact-links">
-
-                <a href="mailto:e.haber@iastate.edu">
-                    Email Me
+                <a href="experience.html" class="button">
+                    Explore My Work
                 </a>
 
-                <a href="https://www.linkedin.com/in/elly-haber2325/"
-                   target="_blank">
+            </div>
+
+            <!-- Right Side -->
+            <div class="side-panel right-panel">
+                <div class="small-card">
+                    <span>01</span>
+                    <p>Creative<br>Ideas</p>
+                </div>
+
+                <div class="small-card">
+                    <span>02</span>
+                    <p>Event<br>Experiences</p>
+                </div>
+
+                <div class="small-card">
+                    <span>03</span>
+                    <p>Digital<br>Content</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <p class="footer-name">Elly Haber</p>
+                <p>Marketing • Events • Communication</p>
+            </div>
+
+            <div class="footer-contact">
+                <a href="mailto:your-email@example.com">
+                    your-email@example.com
+                </a>
+
+                <a href="https://www.linkedin.com/in/elly-haber2325/" target="_blank">
                     LinkedIn
                 </a>
-
             </div>
 
         </div>
 
-    </section>
+        <div class="footer-bottom">
+            <p>© 2026 Elly Haber</p>
+        </div>
 
-
-    <!-- FOOTER -->
-    <footer>
-        © 2026 Elly Haber ♡ Made with creativity
     </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
