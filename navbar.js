@@ -1,32 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Navigation Links: 'Projects' changed to 'Education'
-  const navLinks = [
-    { title: "Home", url: "index.html" },
-    { title: "About", url: "about.html" },
-    { title: "Education", url: "education.html" },
-    { title: "Contact", url: "contact.html" }
-  ];
+document.addEventListener("DOMContentLoaded", () => {
 
-  const navContainer = document.getElementById("main-nav");
+    // Navigation items
+    const navItems = [
+        { name: "About Me", url: "index.html" },
+        { name: "Education", url: "education.html" },
+        { name: "Experience", url: "experience.html" },
+        { name: "Contact", url: "contact.html" }
+    ];
 
-  if (navContainer) {
-    const ul = document.createElement("ul");
+    // Find the navigation area
+    const nav = document.getElementById("main-nav");
 
-    navLinks.forEach(link => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = link.url;
-      a.textContent = link.title;
+    // Create navigation links
+    navItems.forEach(item => {
+        const link = document.createElement("a");
 
-      // Highlight active link
-      if (window.location.pathname.endsWith(link.url)) {
-        a.style.borderBottom = "2px solid #c71585";
-      }
+        link.textContent = item.name;
+        link.href = item.url;
 
-      li.appendChild(a);
-      ul.appendChild(li);
+        // Highlight the current page
+        if (window.location.pathname.endsWith(item.url)) {
+            link.classList.add("active");
+        }
+
+        nav.appendChild(link);
     });
 
-    navContainer.appendChild(ul);
-  }
 });
