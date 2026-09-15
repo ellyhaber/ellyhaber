@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Navigation items
     const navItems = [
         { name: "About Me", url: "index.html" },
         { name: "Education", url: "education.html" },
@@ -8,22 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Contact", url: "contact.html" }
     ];
 
-    // Find the navigation area
-    const nav = document.getElementById("main-nav");
+    // Find all navigation areas
+    const navAreas = document.querySelectorAll(".dynamic-nav");
 
-    // Create navigation links
-    navItems.forEach(item => {
-        const link = document.createElement("a");
+    navAreas.forEach(nav => {
 
-        link.textContent = item.name;
-        link.href = item.url;
+        navItems.forEach(item => {
 
-        // Highlight the current page
-        if (window.location.pathname.endsWith(item.url)) {
-            link.classList.add("active");
-        }
+            const link = document.createElement("a");
 
-        nav.appendChild(link);
+            link.textContent = item.name;
+            link.href = item.url;
+
+            // Highlight the current page
+            const currentPage =
+                window.location.pathname.split("/").pop() || "index.html";
+
+            if (currentPage === item.url) {
+                link.classList.add("active");
+            }
+
+            nav.appendChild(link);
+        });
+
     });
 
 });
