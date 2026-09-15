@@ -138,3 +138,46 @@ body {
     grid-column: 1 / -1;
   }
 }
+/* Top Navigation */
+
+.nav-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  padding: 15px;
+}
+
+.nav-box a {
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* Active Navigation Link */
+
+.nav-box a.active {
+  font-weight: 700;
+}
+
+
+/* Home Page Side Navigation */
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.side-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.side-nav a.active {
+  font-weight: 700;
+}
