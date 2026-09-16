@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Navigation pages
     const navItems = [
         { name: "About Me", url: "index.html" },
         { name: "Education", url: "education.html" },
@@ -7,9 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Contact", url: "contact.html" }
     ];
 
-    // Find all navigation areas
+
+    // Find both navigation areas
     const navAreas = document.querySelectorAll(".dynamic-nav");
 
+
+    // Add navigation links
     navAreas.forEach(nav => {
 
         navItems.forEach(item => {
@@ -19,15 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
             link.textContent = item.name;
             link.href = item.url;
 
-            // Highlight the current page
+
+            // Find current page
             const currentPage =
                 window.location.pathname.split("/").pop() || "index.html";
 
+
+            // Highlight current page
             if (currentPage === item.url) {
                 link.classList.add("active");
             }
 
+
+            // Add link to navigation
             nav.appendChild(link);
+
         });
 
     });
